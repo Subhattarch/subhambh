@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="fontawesome.js" crossorigin="anonymous"></script>
+    <script>
+        window.FontAwesomeConfig = {
+          searchPseudoElements: true
+        }
+    </script>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <header>
+        <input 
+        tabindex="1"
+        type="checkbox" 
+        name="check-to-nav" 
+        id="check-to-nav"
+        class="for-mobile-only"
+        >
+        <p>Subham Bhattacharjee</p>
+        <label for="check-to-nav" class="for-mobile-only">
+            <div></div>
+        </label>
+        <nav>
+            <a href="#intro">intro</a>
+            <a href="#My-Projects">My Projects</a>
+            <a href="#My-Skills">My Skills</a>
+            <a href="#About-Me">About Me</a>
+            <a href="#Contacts">Contacts</a>
+        </nav>
+    </header>
+    <div id="placer"></div>
+    <main>
+        <section id="intro">
+            <div id="logo">
+                <div id="logo__static" class="logo__tyle"></div>
+                <div id="logo__non--static" class="logo__tyle">
+                    <div class="logo__part-1"></div>
+                    <div class="logo__part-2"></div>
+                    <div class="logo__part-3"></div>
+                    <div class="logo__part-4"></div>
+                    <div class="logo__part-5"></div>
+                    <div class="logo__part-6"></div>
+                    <div class="logo__part-7"></div>
+                    <div class="logo__part-8"></div>
+                </div>
+                <div id="quote-block">
+                    <h3 id="quote-1">I'll mess up</h3>
+                    <h3 id="quote-2">I'll nver give up</h3>
+                    <h3 id="quote-3">I'll get better</h3>
+                    <h3 id="quote-4">I am a coder</h3>
+                    <p id="name">- Subham Bhattacharjee</p>
+                </div>
+            </div>
+            <div id="visitor-counter">
+                <h5>You are the</h5>
+                <h2></h2>
+                <h5>visitor</h5>
+            </div>
+            <a href="#My-Projects"><p>My Projects</p></a>
+            <a href="#My-Skills"><p>My Skills</p></a>
+        </section>
+        <section id="My-Projects">
+            <h2>My Projects</h2>
+            <div id="DOM-Projects"></div>
+            <script type="module" src="My-Projects.js"></script>
+        </section>
+        <section id="My-Skills">
+            <h2>My Skills</h2>
+            <div id="DOM-Skills"></div>
+            <script type="module" src="My-Skills.js"></script>
+        </section>
+        <section id="About-Me">
+            <h2>About Me</h2>
+            <p>As you already know I'm Subham Bhattacharjee. I started coding as a sideline initially. I just wanted to be able to support my own studies, but slowly I started liking it, so I started puting more time into it. Now I can releably read almost any block of code and desipher it without much problem. I'm trying my best to improve myself. if you see my older projects you will know how much I have improved. I can write pretty intuitive code, which is easy to read. I like working with python and javaScript and I mostly use jquery and react frontend library while doing frontend and express as my backend.</p>
+        </section>
+    </main>
+    <footer id="Contacts">
+        <h2>Contacts</h2>
+        <a class="gmail" href="mailto:subhambhsubhambh@gmail.com">gmail</a>
+        <a class="linkedin" href="https://www.linkedin.com/in/subham-bhattacharjee-ab82bb205">linkedin</a>
+        <a class="whatsapp" href="https://wa.me/918481860425">WhatsApp</a>
+        <a href="https://github.com/Subhattarch" class="github">github</a>
+        <form id="send-message">
+            <h3>message me</h3>
+            <div>
+                <label for="from">from</label>
+                <input 
+                    id="from" 
+                    name="from" 
+                    class="name"
+                    type="text" 
+                    placeholder="Your Name"
+                >
+            </div>
+            <div>
+                <label for="subject">subject</label>
+                <input 
+                    id="subject" 
+                    name="subject" 
+                    class="subject"
+                    type="text"
+                >
+            </div>
+            <div>
+                <label for="message">message</label>
+                <textarea 
+                    name="message" 
+                    id="message" 
+                    rows="20"
+                    required
+                ></textarea>
+            </div>
+            <input type="submit" value="send">
+        </form>
+    </footer>
+</body>
+</html>

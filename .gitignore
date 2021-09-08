@@ -1,0 +1,6 @@
+node_modules
+.password
+ngrok
+.getKey.js
+.decrypt.js
+sub_modules/.password.js

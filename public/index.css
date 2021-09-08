@@ -1,0 +1,850 @@
+/*
+====================
+**********Table Of Content**********
+1. global styles
+2. typography
+3. logo
+4. flash
+5. quote-block
+6. visitor-counter
+7. section linker and intro
+8. header nd nav
+8.1. header
+8.2. nav
+8.3. media query
+8.3.1. hover
+8.3.2. title in mobile
+8.3.3. button to access nav in mobile
+8.3.4. nav layout for mobile
+8.3.5. future query for clip path
+9. My Projects
+10. My Skills
+11. About Me
+12. Contacts
+====================
+*/
+
+/*
+====================
+1. global styles
+====================
+*/
+
+:root {
+    --primary-dark-color: #242424;
+    --primary-light-color: #ffffff;
+    --secondary-light-color: #33ff00;
+    --secondary-dark-color: #434942;
+    --tertiary-light-color: #868686;
+    --tertiary-dark-color: #333333;
+    --quaternary-light-color: #636363;
+    --width: 20vh;
+}
+html {
+    scroll-padding-top: 3.4em;
+    /* overflow: auto; */
+}
+body {
+    background-color: var(--primary-dark-color);
+    color: var(--primary-light-color);
+    padding: 0;
+    margin: 0;
+    /* overflow: hidden; */
+}
+
+/*
+====================
+2. typography
+====================
+*/
+
+p, input, a {
+    line-height: 1.7;
+}
+
+h2 {
+    line-height: 0.5;
+}
+h3 {
+    line-height: 1.3;
+}
+h5 {
+    line-height: 0.6;
+}
+
+input, textarea {
+    background-color: var(--secondary-dark-color);
+    color: var(--primary-light-color);
+    border: solid 2px var(--tertiary-light-color);
+    font-size: inherit;
+}
+
+input:focus, textarea:focus {
+    background-color: var(--tertiary-dark-color);
+    --tertiary-light-color: #dadada;
+    outline: none;
+}
+
+input:hover, textarea:hover {
+    --tertiary-light-color: #fff;
+    border-width: 3px;
+}
+
+input.name {
+    width: 25.5ch;
+}
+input.subject {
+    width: 18ch;
+}
+label.required::after {
+    content: "*";
+    color: var(--secondary-light-color);
+}
+
+a, input[type="button"], input[type="submit"] {
+    border: none;
+    text-decoration: none;
+    color: var(--secondary-light-color);
+    background-color: var(--secondary-dark-color);
+    display: block;
+    width: auto;
+    padding: 0.5em 1em;
+    border-radius: 0.4em;
+    box-shadow: 0 0 0 3px var(--tertiary-light-color);
+    margin: 3px;
+}
+a:hover, a:focus, 
+input[type="button"]:hover, input[type="button"]:focus,
+input[type="submit"]:hover, input[type="submit"]:focus,
+.hover {
+    box-shadow: 0 0 0 4px var(--secondary-light-color);
+    background-color: var(--quaternary-light-color);
+}
+
+::-moz-focus-inner {
+    border: none;
+}
+
+/*
+====================
+3. logo
+====================
+*/
+
+#logo {
+    position: relative;
+}
+
+.logo__tyle {
+    height: calc( var(--width) * 2 );
+    width: var(--width);
+    position: absolute;
+    top: calc( var(--width) / 3 );
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+#logo > div > div {
+    width: calc( var(--width) / 3.5 );
+    height: var(--width);
+    position: absolute;
+}
+#logo__static > div {
+    background-color: var(--primary-light-color);
+}
+.logo__part-1 {
+    right: 0;
+}
+.logo__part-2 {
+    transform: rotate(-90deg);
+    left: 0;
+    top: 0;
+    transform-origin: calc( var(--width) / 7 ) calc( var(--width) / 7 );
+}
+.logo__part-3 { z-index: 7; transform: rotate(180deg);}
+.logo__part-4 {
+    transform: rotate(90deg);
+    transform-origin: calc( var(--width) / 7 ) calc( var(--width) / 7 );
+    right: 0;
+    top: calc( 50% - var(--width) / 7 );
+    z-index: 6;
+}
+.logo__part-5 {
+    transform: rotate(180deg);
+    right: 0;
+    top: 50%;
+    z-index: 8;
+}
+.logo__part-6 {
+    transform: rotate(-90deg);
+    transform-origin: calc( var(--width) / 2 ) calc( var(--width) / 2 );
+    left: 0;
+    bottom: 0;
+}
+.logo__part-7 {
+    left: 0;
+    bottom: 0;
+}
+.logo__part-8 {
+    transform: 
+    rotate(9deg) translate(-50%, -50%) scale(0.7, 2.5);
+    top: 50%;
+    left: 42%;
+    z-index: 8;
+}
+
+#logo__static > .logo__part-4,
+#logo__static > .logo__part-8 {
+    box-shadow: 0 0 0 calc( var(--width) / 30 ) var(--primary-dark-color);
+}
+#logo__static { z-index: -1;}
+
+#logo__non--static {
+    --animation-ofset: calc( 100vh + 100vw );
+}
+
+#logo__non--static > div::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    box-shadow: 0 0 50px 40px var(--primary-light-color);
+    left: 50%;
+    transform: translate( -50%, var(--animation-ofset) );
+    transition: transform 1s;
+}
+#logo__non--static > div.animation {
+    --animation-ofset: calc( -100vh - 100vw);
+}
+
+/*
+====================
+4. flash
+====================
+*/
+
+#flash {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-light-color);
+    transition: opacity 0.5s;
+}
+
+/*
+=====================
+5. quote-block
+=====================
+*/
+
+#quote-block {
+    position: absolute;
+    top: calc( var(--width) * 7 / 2.8 );
+    left: 60%;
+    font-size: 0.7rem;
+    color: var(--secondary-light-color);
+}
+
+#quote-block > h3,
+#quote-block > p {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+#name {
+    color: var(--primary-light-color);
+    position: relative;
+    left: 55%;
+}
+
+@media( orientation: portrait ) {
+    #quote-block {
+        right: 0;
+    }
+    #name {
+        left: 10%;
+    }
+}
+@media(prefers-reduced-motion: reduce) {
+    #quote-block > h3,
+    #quote-block > p {
+        opacity: 1;
+    }
+}
+
+/*
+====================
+6. visitor-counter
+====================
+*/
+
+#visitor-counter {
+    text-align: center;
+    position: absolute;
+    top: calc( var(--width) * 7 / 2.8 );
+    right: 55%;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+#visitor-counter > h2 {
+    color: var(--secondary-light-color);
+    font-size: 1.8em;
+    line-height: 0.1;
+}
+
+@media( orientation: portrait ) {
+    #visitor-counter {
+        left: 10%;
+    }
+}
+@media(prefers-reduced-motion: reduce) {
+    #visitor-counter {
+        opacity: 1;
+    }
+}
+
+/*
+====================
+7. section linker and intro
+====================
+*/
+
+#intro {
+    position: relative;
+    height: calc( var(--width) * 2 + 17rem);
+}
+
+#intro > a {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: 3rem;
+    min-width: 10ch;
+    width: calc( 40% - var(--width) / 2 - 3ch );
+    height: calc( var(--width) * 1.7 );
+    top: calc( var(--width) / 3 );
+    --X-ofset: 0;
+    transform: translate(var(--X-ofset));
+    text-align: center;
+    transition: transform 1s cubic-bezier(.42,0,.6,1.31);
+}
+
+#intro > a > p {
+    width: 100%;
+}
+
+#intro > a[href="#My-Projects"] {
+    left: 5%;
+    --X-ofset: -200%;
+}
+
+#intro > a[href="#My-Skills"] {
+    right: 5%;
+    --X-ofset: 200%;
+}
+
+@media (max-width: 100ch) and (orientation: landscape) {
+    #intro > a {
+        font-size: 2.3rem;
+    }
+}
+
+@media( max-width: 92ch) and (max-height: 23rem ) ,
+( max-width: 80ch){
+    #intro > a {
+        font-size: 1.6rem;
+    }
+}
+
+@media(orientation: portrait) {
+    #intro {
+        height: calc( var(--width) * 2 + 20rem)
+    }
+    #intro > a {
+        width: auto;
+        height: 2.7rem;
+        font-size: 1.2rem;
+        bottom: 0;
+        top: unset;
+    }
+    #intro > a[href="#My-Projects"] {
+        left: 0px;
+        right: 55%;
+    }
+    #intro > a[href="#My-Achivements"] {
+        right: 0px;
+        left: 55%;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    #intro > a {
+        transform: translate(0);
+    }
+}
+
+/*
+====================
+8. header and nav
+====================
+*/
+
+/*
+====================
+8.1. header
+====================
+*/
+
+header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    background-color: var(--tertiary-dark-color);
+    z-index: 1000;
+    transition: transform 1s cubic-bezier(.23,1.05,.99,1);
+    border-bottom: solid 3px var(--quaternary-light-color);
+}
+#placer, header {
+    height: 3.2rem;
+}
+header > p,
+nav {
+    display: inline-block;
+    white-space: nowrap;
+}
+header > p {
+    transform: translateY(-150%);
+    transition: transform 250ms ease-in-out;
+}
+header > p.active {transform: translateY(0)}
+@media(prefers-reduced-motion: reduce) {
+    header > p {transform: translateY(0)}
+}
+/*
+====================
+8.2. nav
+====================
+*/
+
+nav {
+    height: fit-content;
+    text-align: right;
+    width: calc(100% - 19ch);
+    min-width: 41ch;
+}
+nav div, nav a {
+    display: inline-block;
+}
+
+.for-mobile-only {
+    visibility: hidden;
+    position: absolute;
+}
+
+/*
+====================
+8.3 media query
+====================
+*/
+
+/*
+====================
+8.3.1 hover
+====================
+*/
+
+@media (hover) {
+    label.for-mobile-only:hover,
+    label.for-mobile-only:focus,
+    input.for-mobile-only:focus ~ label,
+    input.for-mobile-only:hover ~ label {
+        outline: solid var(--secondary-light-color) 3px;
+        outline-offset: 3px;
+    }
+}
+
+@media (max-width: 80ch) {
+    /*
+    ====================
+    8.3.2. title for mobile
+    ====================
+    */
+    header > p {
+        z-index: 3;
+    }
+
+    /*
+    ====================
+    8.3.3. button to access nav in mobile
+    ====================
+    */
+    .for-mobile-only {
+        visibility: visible;
+    }
+    input.for-mobile-only {
+        display: block;
+        position: fixed;
+        top: -100%;
+        left: -100%;
+    }
+    label.for-mobile-only {
+        display: flex;
+        align-items: center;
+        visibility: visible;
+        position: absolute;
+        right: 0.5rem;
+        height: 2rem;
+        width: 2.35rem;
+    }
+    label.for-mobile-only::after,
+    label.for-mobile-only::before {
+        content: "";
+        display: block;
+        transform-origin: left;
+        position: absolute;
+    }
+    label.for-mobile-only::after {
+        bottom: 0;
+    }
+    label.for-mobile-only::before {
+        top: 0;
+    }
+    label.for-mobile-only > div,
+    label.for-mobile-only::before,
+    label.for-mobile-only::after {
+        width: 2.35rem;
+        height: 14%;
+        background-color: var(--primary-light-color);
+        border-radius: 999px;
+        transition: transform 250ms ease-in-out;
+    }
+    #check-to-nav:checked ~ label > div {
+        transform: scaleX(0);
+    }
+    #check-to-nav:checked ~ label::before {
+        transform: rotate(45deg);
+    }
+    #check-to-nav:checked ~ label::after {
+        transform: rotate(-45deg);
+    }
+
+    /*
+    ======================
+    8.3.4. nav layout for mobile
+    ======================
+    */
+
+    nav {
+        display: block;
+        position: fixed;
+        top: 3.2rem;
+        left: 0;
+        height: calc( 100vh - 3.2rem);
+        width: 100vw;
+        background-color: var(--tertiary-dark-color);
+        transform: translate(100vw);
+        transition: transform 700ms ease-in-out;
+    }
+    nav a {
+        display: block;
+        font-size: 1.6rem;
+        text-align: center;
+        margin: 10px 1em;
+    }
+    #check-to-nav:checked ~ nav {
+        transform: translate(0);
+    }
+
+    /*
+    =====================
+    8.3.5. future query for clip path
+    =====================
+    */
+
+    @supports (clip-path: circle(0px at top right)) {
+        nav {
+            transform: translate(0);
+            clip-path: circle(0px at top right);
+            transition: clip-path 700ms ease-in-out;
+        }
+        #check-to-nav:checked ~ nav {
+            clip-path: circle(150vmax at top right);
+        }
+    }
+
+    /*
+    ====================
+    8.3.6. extra micro interaction for mobile
+    ====================
+    */
+
+    #check-to-nav:checked ~ p {
+        transform: translateY(0);
+    }
+}
+
+/*
+====================
+8.3.7 for reduced motion
+====================
+*/
+
+@media(prefers-reduced-motion: reduce) {
+    header {
+        transform: translateY(0);
+    }
+    label.for-mobile-only > div,
+    label.for-mobile-only::before,
+    label.for-mobile-only::after {
+        transition-duration: 0ms;
+    }
+    nav {
+        transition-duration: 0ms;
+    }
+}
+
+/*
+====================
+8. My Projects
+====================
+*/
+
+#My-Projects {
+    --primary-dark-color: #434942;
+    --secondary-dark-color: #242424;
+    background-color: var(--primary-dark-color);
+    text-align: center;
+    min-height: 12rem;
+    position: relative;
+    margin-top: 14px;
+    transform: translateY(50vh);
+    transition: transform 1s ease-in-out;
+}
+
+#My-Projects::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: var(--primary-dark-color);
+    width: 9rem;
+    height: 9rem;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    z-index: -1;
+}
+
+#My-Projects h2 {
+    font-size: 1.8rem;
+    line-height: 3;
+}
+
+#DOM-Projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#My-Projects a {
+    width: 20ch;
+    max-width: 80%;
+    font-size: 2rem;
+    line-height: 1.7;
+    font-weight: bold;
+    margin: 1em auto;
+}
+
+#My-Projects iframe {
+    transform-origin: top left;
+}
+#My-Projects a > div {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5em;
+}
+#My-Projects a > div::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#My-Projects input {
+    width: 80%;
+}
+
+@media(max-width: 100ch) {
+    #My-Projects {
+        margin-top: 5em;
+    }
+    #My-Projects a {
+        width: 80%;
+    }
+    #My-Projects a {
+        font-size: 1.6rem;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    #My-Projects {
+        transform: translateY(0);
+    }
+}
+
+/*
+====================
+9. My Skills
+====================
+*/
+
+#My-Skills {
+    text-align: center;
+    font-size: 1.7rem;
+    padding-top: 1px;
+}
+
+#I-am-best-at h2 {color: var(--secondary-light-color)}
+#I-am-best-at h3 {
+    --animation-ofset: -150vw;
+    position: relative;
+    --opacity: 0;
+}
+
+#I-am-best-at h3::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    box-shadow: 0 0 50px 40px;
+    top: 50%;
+    transform: translate( var(--animation-ofset), -50% );
+    transition: transform 500ms;
+}
+
+@media(prefers-reduced-motion: reduce) {
+    #I-am-best-at h3 {--opacity: 1}
+}
+
+/*
+====================
+11. About Me
+====================
+*/
+
+#About-Me {
+    background-color: var(--secondary-dark-color);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#About-Me > p {
+    max-width: 60ch;
+}
+
+/*
+====================
+12. Contacts
+====================
+*/
+
+#Contacts {
+    padding: 1em;
+    padding-bottom: 0.6em;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#Contacts *~* {
+    margin-top: 3px;
+}
+#Contacts > *~a {
+    margin-top: 6px;
+}
+#Contacts > #send-message {
+    --primary-dark-color: #434942;
+    --secondary-dark-color: #242424;
+    background-color: var(--primary-dark-color);
+    padding: 0.5em;
+    margin-top: 1em;
+    border-radius: 1em;
+}
+#Contacts > h2#send-message {
+    padding: 4em 0.5em;
+
+}
+
+#Contacts textarea {
+    width: calc( 100% - 1em );
+}
+#Contacts a {
+    text-align: center;
+    background-color: var(--tertiary-dark-color);
+}
+#Contacts a::before {
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Brands";
+}
+
+#Contacts a.gmail {
+    --secondary-light-color: #ea4335;
+}
+
+a.gmail::before {
+    content: "\f1a0  ";
+    font-size: 0.9em;
+}
+#Contacts a.linkedin {
+    --secondary-light-color: #0077b5;
+}
+a.linkedin::before {
+    content: "\f08c  ";
+}
+#Contacts a.whatsapp {
+    --secondary-light-color: #4fce5d;
+}
+#Contacts a.whatsapp::before {
+    content: "\f232  ";
+}
+#Contacts a.github {
+    --secondary-light-color: #f5f5f5;
+}
+#Contacts a.github::before {
+    content: "\f092  ";
+    font-size: 1.3em;
+}
+#Contacts a:hover, a:focus {
+    background-color: var(--secondary-light-color);
+    color: var(--tertiary-dark-color);
+}
+
+@media(min-Width: 50ch) {
+    #Contacts a {
+        font-size: 2rem;
+    }
+}
+@media(min-width: 200ch) {
+    #Contacts a {
+        font-size: 4rem;
+    }
+}

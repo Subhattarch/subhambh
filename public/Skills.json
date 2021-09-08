@@ -1,0 +1,18 @@
+{
+    "BestAt": [
+        {"name": "JQuery", "color": "#0868AC"},
+        {"name": "React", "color": "#61DBFB"},
+        {"name": "JavaScript", "color": "#F0DB4F"},
+        {"name": "CSS", "color": "#264DE4"}
+    ],
+    "AlsoKnow": [
+        "HTML",
+        "Python",
+        "JSON",
+        "JSX",
+        "SASS",
+        "Java",
+        "C++",
+        "C"
+    ]
+}
