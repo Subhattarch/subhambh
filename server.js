@@ -19,6 +19,11 @@ app.get("/visitorsNumbers", async (req, res) => {
         "./public/visitors.numbers", VisitorNo.toString()
     )
 })
+
+app.get("/tribute-page", (req, res) => {
+    res.render("tribute-page")
+})
+
 app.post("/", (req, res) => {
     console.log(req.body)
     let mail = {message: req.body.message}

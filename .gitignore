@@ -4,3 +4,4 @@ ngrok
 .getKey.js
 .decrypt.js
 sub_modules/.password.js
+public/workspace.code-workspace

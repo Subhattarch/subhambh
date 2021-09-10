@@ -833,7 +833,7 @@ a.linkedin::before {
     content: "\f092  ";
     font-size: 1.3em;
 }
-#Contacts a:hover, a:focus {
+#Contacts a:hover, #Contacts a:focus {
     background-color: var(--secondary-light-color);
     color: var(--tertiary-dark-color);
 }
