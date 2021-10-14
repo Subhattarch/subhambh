@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>survey form</title>
+        <script src="js/bundle.js" async></script>
+        <script src="js/survey-form.js" type="module"></script>
+        <link rel="stylesheet" href="css/survey-form.css" />
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Design Survey</h1>
+            <p id="description">
+                A survey to evaluate what people like of my projects and what i
+                should change. This is also for the course web design of FCC.
+                I'll change my design as suggested by the undetakers of this
+                survey. don't hasitate to point all the stuff that sores your
+                eyes and anything you think should be in the design but isn't
+                implemented.
+            </p>
+        </header>
+        <main>
+            <form action="/survey-form" method="post" id="survey-form">
+                <section>
+                    <label id="name-label" for="name">name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="your full name"
+                        required
+                    />
+                </section>
+                <section>
+                    <label id="email-label" for="email">email</label
+                    ><input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="email"
+                        required
+                    />
+                </section>
+                <section>
+                    <p>
+                        Please rate my design in the scale of 10. here 0 means
+                        it's one of the worst design you came accross and 10
+                        means this is a great design.
+                    </p>
+                    <p>
+                        This will help me see how other people think of my
+                        design.
+                    </p>
+                    <label id="number-label" for="number">rating</label
+                    ><input
+                        type="number"
+                        name="rating"
+                        id="number"
+                        min="0"
+                        max="10"
+                        placeholder="0-10 rating"
+                        required
+                    />
+                </section>
+                <section>
+                    <label for="dropdown"
+                        >Dark colour I should add to my design</label
+                    >
+                    <select name="darkColourToBeAdded" id="dropdown">
+                        <option value="#006D89" class="dark color-option">
+                            #006D89
+                        </option>
+                        <option value="#E0F8D5" class="dark color-option">
+                            #E0F8D5
+                        </option>
+                        <option value="#404A3B" class="dark color-option">
+                            #404A3B
+                        </option>
+                        <option value="#004600" class="dark color-option">
+                            #004600
+                        </option>
+                        <option value="#A26C21" class="dark color-option">
+                            #A26C21
+                        </option>
+                    </select>
+                </section>
+                <section>
+                    <p>Which of these light color should I use?</p>
+                    <div>
+                        <input
+                            type="radio"
+                            name="lightColorToBeAdded"
+                            id="color-1"
+                            value="#00B4DD"
+                            checked
+                        />
+                        <label class="light color-option" for="color-1"
+                            >#00B4DD</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="lightColorToBeAdded"
+                            id="color-2"
+                            value="#E0F8D5"
+                        />
+                        <label class="light color-option" for="color-2"
+                            >#E0F8D5</label
+                        >
+                    </div>
+                </section>
+                <section>
+                    <p>Which of the following do I need to improve?</p>
+                    <div>
+                        <input
+                            type="checkbox"
+                            name="needToImprove"
+                            id="label-1"
+                            value="color"
+                        /><label for="label-1">Color</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            name="needToImprove"
+                            id="label-2"
+                            value="colorScheme"
+                        /><label for="label-2">Color Scheme</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            name="needToImprove"
+                            id="label-3"
+                            value="fontFamily"
+                        /><label for="label-3">Font Family</label>
+                    </div>
+                    <div>
+                        <input
+                            type="checkbox"
+                            name="needToImprove"
+                            id="label-4"
+                            value="fontSize"
+                        /><label for="label-4">Font Size</label>
+                    </div>
+                </section>
+                <section>
+                    <label for="ExtraComment"
+                        >Have any extra comment? let me know. <br
+                    /></label>
+                    <textarea
+                        name="addedComment"
+                        id="ExtraComment"
+                        rows="20"
+                    ></textarea>
+                </section>
+                <input type="submit" value="Submit" id="submit" />
+            </form>
+        </main>
+        <footer>
+            <p>
+                If you haven't yet you should visit my
+                <a href="/">portfolio</a>.
+            </p>
+        </footer>
+    </body>
+</html>

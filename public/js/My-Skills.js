@@ -29,7 +29,7 @@ let MySkills = () => {
     AlsoKnow: []
   });
   React.useEffect(() => {
-    $.get("./Skills.json", skills => SetSkills(skills));
+    $.get("/json/Skills.json", skills => SetSkills(skills));
   }, []);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("section", {
     id: "I-am-best-at"

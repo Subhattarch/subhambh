@@ -15,7 +15,7 @@ let MyProjects = () => {
     key: 0
   }]);
   const [ProjectDisplayNumber, SetProjectDisplayNumber] = React.useState(6);
-  React.useEffect(() => $.get("./Projects.json", data => {
+  React.useEffect(() => $.get("/json/Projects.json", data => {
     projects = data.map((Data, index) => ({ ...Data,
       key: index
     }));

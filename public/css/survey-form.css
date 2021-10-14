@@ -1,0 +1,116 @@
+/*
+====================
+********************Table of Content********************
+1. global styles
+2. typography
+3. color options
+====================
+*/
+
+/*
+====================
+1. global styles
+====================
+*/
+
+:root {
+    --bg-color-m: #242424;
+    --fn-color-m: #ffffff;
+    --fn-color-s: #33ff00;
+    --bg-color-s: #434942;
+    --fn-color-t: #868686;
+    --bg-color-t: #333333;
+    --fn-color-q: #636363;
+}
+
+body {
+    background-color: var(--bg-color-m);
+    color: var(--fn-color-m);
+    font-size: 1rem;
+    padding: 0.5ch;
+}
+
+/*
+2. typography
+*/
+
+h1 {
+    text-align: center;
+    color: var(--fn-color-s);
+    line-height: 1;
+}
+
+form,
+p {
+    width: 100%;
+    max-width: 60ch;
+    margin: auto;
+    line-height: 1.7;
+}
+
+a {
+    color: var(--fn-color-s);
+    text-decoration: underline dotted;
+}
+
+a:focus,
+a:hover {
+    color: var(--fn-color-m);
+    background-color: var(--bg-color-s);
+}
+
+section {
+    font-size: 1em;
+}
+
+input,
+select,
+textarea {
+    color: inherit;
+    background-color: var(--bg-color-s);
+    border: 0.2em solid var(--fn-color-t);
+    font-size: 1em;
+    margin: 0.2em;
+}
+
+textarea {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+}
+
+input:focus,
+input:hover,
+select:focus,
+select:hover,
+textarea:focus,
+textarea:hover {
+    border: 0.2em solid var(--fn-color-s);
+    background-color: var(--fn-color-t);
+}
+
+label.required::after {
+    content: "*";
+    color: var(--fn-color-s);
+}
+
+/*
+====================
+3. color options
+====================
+*/
+
+.color-option {
+    --color: #fff;
+}
+
+.dark.color-option {
+    color: #000;
+    background-color: var(--color);
+}
+
+.light.color-option {
+    color: var(--color);
+}

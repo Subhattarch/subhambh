@@ -1,5 +1,5 @@
 import animate from "./animate-element.js"
-import "./modules/jquery.min.js"
+import "./modules/jquery.min.js.js"
 
 let quoteAnimationIteration = name => {
     $(name).css("opacity", "1")
@@ -154,5 +154,5 @@ $(document).ready(() => {
             IntroEndCallback
         )
         $("html, body").css("overflow", "hidden")
-    }, 100)
+    }, 500)
 })

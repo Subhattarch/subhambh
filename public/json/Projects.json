@@ -1,7 +1,15 @@
 [
     {
+        "name": "tech-surf-calendar",
+        "href": "/calendar"
+    },
+    {
         "name": "fcc-tribute-page",
         "href": "/tribute-page"
+    },
+    {
+        "name": "fcc-survey-form",
+        "href": "/survey-form"
     },
     {
         "name": "Code-pen-My-Portfolio",

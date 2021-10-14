@@ -1,5 +1,5 @@
 import { getAsArray } from "./small-functions.js"
-import "./modules/jquery.min.js"
+import "./modules/jquery.min.js.js"
 export default (
     mainNames,
     intervals,
